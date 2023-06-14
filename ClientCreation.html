@@ -9,6 +9,10 @@
         <h1>Anna's Architectural Firm</h1>
         <h2>Client Creation Portal</h2>
     </header>
+    <div class="button-container">
+        <button id="homeButton" class="home-button">Home</button>
+        <button id="meetingButton" class="meeting-button">Client Meetings</button>
+    </div>
     <main>
         <form>
             <label for="clientName">Client Name:</label>
@@ -28,7 +32,22 @@
     </footer>
 
     <script>
-
+        document.addEventListener("DOMContentLoaded", function() {
+            // Home Button
+            const homeButton = document.getElementById("homeButton");
+            homeButton.addEventListener("click", function() {
+                // Redirect to the home page
+                window.location.href = "HomePage.html";
+            });
+    
+            // Meeting Button
+            const meetingButton = document.getElementById("meetingButton");
+            meetingButton.addEventListener("click", function() {
+                // Redirect to the meeting page
+                window.location.href = "ClientMeeting.html";
+            });
+        });
     </script>
+    
 </body>
 </html>

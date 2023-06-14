@@ -1,0 +1,11 @@
+To do for project:
+
+Apply bootstrap to styles/reformat page
+
+Apply JS and node/angular to web app
+
+Configure Database tables with data/ take screenshots
+Automate DB?
+
+What in the hell is gherkin?
+
