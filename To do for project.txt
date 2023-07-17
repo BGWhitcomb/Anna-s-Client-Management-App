@@ -1,8 +1,11 @@
 To do for project:
 
+Add input options to contact creation/meeting form
+
 Apply bootstrap to styles/reformat page
 
 Apply JS and node/angular to web app
+angular components created, needs applied
 
 Configure Database tables with data/ take screenshots
 Automate DB?

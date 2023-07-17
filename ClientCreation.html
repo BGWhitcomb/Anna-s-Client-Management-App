@@ -14,6 +14,7 @@
         <button id="meetingButton" class="meeting-button">Client Meetings</button>
     </div>
     <main>
+        <app-client-creation></app-client-creation>
         <form>
             <label for="clientName">Client Name:</label>
             <input type="text" id="clientName" name="clientName" required>
@@ -30,24 +31,6 @@
     <footer>
         <p>&copy; 2023 Anna's Architectural Firm</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Home Button
-            const homeButton = document.getElementById("homeButton");
-            homeButton.addEventListener("click", function() {
-                // Redirect to the home page
-                window.location.href = "HomePage.html";
-            });
-    
-            // Meeting Button
-            const meetingButton = document.getElementById("meetingButton");
-            meetingButton.addEventListener("click", function() {
-                // Redirect to the meeting page
-                window.location.href = "ClientMeeting.html";
-            });
-        });
-    </script>
     
 </body>
 </html>
