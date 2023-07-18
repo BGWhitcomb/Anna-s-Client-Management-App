@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.creation-button,
+.meeting-button,
+.home-button {
+    background-color: #333;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    margin: 0 10px;
+    
+}
+
+.creation-button:hover,
+.meeting-button:hover,
+.home-button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+}  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <main>
+            <form id="meetingForm">
+                <label for="client">Client:</label>
+                <select id="client" name="client"></select>
+    
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+    
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+    
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+    
+                <input type="submit" value="Schedule Meeting">
+            </form>
+    
+            <table id="meetingTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Client</th>
+                        <th>Loc ation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </main>
+        <footer>
+            <p>&copy; 2023 Anna's Architectural Firm</p>
+        </footer>
+        
+    </body>
+</html>
+ 
+<router-outlet></router-outlet>
