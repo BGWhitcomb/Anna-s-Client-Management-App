@@ -65,6 +65,11 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+.success-notification {
+    background-color: green;
+    color: white;
+  }
+
 footer {
     background-color: #f5f5f5;
     padding: 10px;

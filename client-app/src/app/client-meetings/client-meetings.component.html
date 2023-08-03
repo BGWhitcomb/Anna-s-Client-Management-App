@@ -2,33 +2,40 @@
 <html>
     <body>
         <main>
-            <form id="meetingForm">
+            <form (ngSubmit)="onSubmit()" id="meetingForm">
                 <label for="client">Client:</label>
-                <select id="client" name="client"></select>
-    
+                <select id="client" [(ngModel)]="selectedClient" name="client" required>
+                  <option *ngFor="let client of clients" [ngValue]="client">{{ client.name }}</option>
+                </select>
+              
                 <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-    
+                <input type="date" id="date" [(ngModel)]="meetingDate" name="date" required>
+              
                 <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
-    
+                <input type="time" id="time" [(ngModel)]="meetingTime" name="time" required>
+              
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
-    
+                <input type="text" id="location" [(ngModel)]="meetingLocation" name="location" required>
+              
                 <input type="submit" value="Schedule Meeting">
             </form>
-    
+            
             <table id="meetingTable">
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Client</th>
-                        <th>Loc ation</th>
+                        <th>Location</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Table rows will be dynamically added here -->
+                    <tr *ngFor="let meeting of meetings">
+                        <td>{{ meeting.meetingDate }}</td>
+                        <td>{{ meeting.meetingTime }}</td>
+                        <td>{{ meeting.selectedClient?.name }}</td>
+                        <td>{{ meeting.meetingLocation }}</td> 
+                    </tr>
                 </tbody>
             </table>
         </main>
@@ -38,5 +45,4 @@
         
     </body>
 </html>
- 
-<router-outlet></router-outlet>
+

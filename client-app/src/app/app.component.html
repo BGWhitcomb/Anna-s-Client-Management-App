@@ -7,8 +7,17 @@
             <h1>Anna's Architectural Firm</h1>
             <h2>Client Management System</h2>
         </div>
-    <app-home-page></app-home-page>
-    </body>
-</html>
+        <div class="button-container">
+            <button class="home-button" routerLink="home">Home</button>
+            <button class="creation-button" routerLink="create">Client Creation</button>
+            <button class="meeting-button" routerLink="meeting">Client Meetings</button>
+        </div>
 
-<router-outlet></router-outlet>
+        <div *ngIf="isHomePage">
+             <app-home-page></app-home-page>
+        </div>
+    </body>
+</html>     
+          <div *ngIf="!isHomePage">
+            <router-outlet></router-outlet>
+          </div>

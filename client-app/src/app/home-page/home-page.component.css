@@ -1,44 +1,17 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+.churchImg {
     text-align: center;
+    height: 350px;
+    width: 100px;
 }
 
-main {
-    padding: 20px;
+.homeWelcome {
     text-align: center;
+    padding: 5px;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.creation-button,
-.meeting-button,
-.home-button {
-    background-color: #333;
-    color: #f5f5f5;
-    padding: 10px 20px;
-    border: none;
-    font-weight: bold;
-    margin: 0 10px;
-    
-}
-
-.creation-button:hover,
-.meeting-button:hover,
-.home-button:hover {
-    background-color: #555;
+.homeDescription {
+    text-align: center;
+    padding: 5px;
 }
 
 footer {

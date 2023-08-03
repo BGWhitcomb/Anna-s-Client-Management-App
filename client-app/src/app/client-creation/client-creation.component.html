@@ -2,15 +2,15 @@
 <html>
     <body>
         <main>
-            <form>
+            <form (ngSubmit)='onSubmit()'>
                 <label for="clientName">Client Name:</label>
-                <input type="text" id="clientName" name="clientName" required>
+                <input type="text" id="clientName" [(ngModel)]="clientName" name="clientName" required>
                 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" [(ngModel)]="clientEmail" name="email" required>
                 
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" [(ngModel)]="clientPhone" name="phone" required>
                 
                 <input type="submit" value="Create Client">
             </form>
@@ -20,5 +20,3 @@
         </footer>
     </body>
 </html>
-
-<router-outlet></router-outlet>
