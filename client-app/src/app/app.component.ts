@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
       });
   }
 
-
   private isRouteHomePage(url: string): boolean {
-    return url === '/' || url.toLowerCase().includes('/home');
+    return url === '/' || url.startsWith('/home');
   }
 }
+

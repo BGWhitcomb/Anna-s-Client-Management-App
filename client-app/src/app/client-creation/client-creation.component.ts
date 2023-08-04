@@ -29,13 +29,17 @@ export class ClientCreationComponent {
 
       this.snackBar.open('Client created successfully!', 'Close', {
       duration: 3000, // Display duration in milliseconds
-      panelClass: 'success-notification'
+      panelClass: 'green-snackbar'
     });
 
     console.log('Client created successfully!');
     console.log('Name:', this.clientName);
     console.log('Email:', this.clientEmail);
     console.log('Phone:', this.clientPhone);
+
+    this.clientName = '';
+    this.clientEmail = ''; // Reset form with onSubmit
+    this.clientPhone = '';
   }
 
   private generateNewClientID(): number {

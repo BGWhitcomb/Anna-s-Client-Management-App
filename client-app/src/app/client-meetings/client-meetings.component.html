@@ -18,6 +18,7 @@
                 <input type="text" id="location" [(ngModel)]="meetingLocation" name="location" required>
               
                 <input type="submit" value="Schedule Meeting">
+                <input type="reset" value="Reset">
             </form>
             
             <table id="meetingTable">
@@ -27,6 +28,7 @@
                         <th>Time</th>
                         <th>Client</th>
                         <th>Location</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +36,10 @@
                         <td>{{ meeting.meetingDate }}</td>
                         <td>{{ meeting.meetingTime }}</td>
                         <td>{{ meeting.selectedClient?.name }}</td>
-                        <td>{{ meeting.meetingLocation }}</td> 
+                        <td>{{ meeting.meetingLocation }}</td>
+                        <td>
+                            <button class="deleteButton" (click)="onDelete(meeting)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

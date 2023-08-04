@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <main>
-            <form (ngSubmit)='onSubmit()'>
-                <label for="clientName">Client Name:</label>
-                <input type="text" id="clientName" [(ngModel)]="clientName" name="clientName" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" [(ngModel)]="clientEmail" name="email" required>
-                
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" [(ngModel)]="clientPhone" name="phone" required>
-                
-                <input type="submit" value="Create Client">
-            </form>
-        </main>
-        <footer>
-            <p>&copy; 2023 Anna's Architectural Firm</p>
-        </footer>
-    </body>
+  <head>
+    <title>Client Management System</title>
+  </head>
+  <body>
+    <main>
+      <form (ngSubmit)="onSubmit()">
+        <label for="clientName">Client Name:</label>
+        <input type="text" id="clientName" [(ngModel)]="clientName" name="clientName" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="clientEmail" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" [(ngModel)]="clientPhone" name="phone" required>
+        <input type="submit" value="Create Client">
+        <input type="reset" value="Reset">
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Anna's Architectural Firm</p>
+    </footer>
+  </body>
 </html>
+
