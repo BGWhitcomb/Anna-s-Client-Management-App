@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <main>
-            <form (ngSubmit)="onSubmit()" id="meetingForm">
-                <label for="client">Client:</label>
-                <select id="client" [(ngModel)]="selectedClient" name="client" required>
-                  <option *ngFor="let client of clients" [ngValue]="client">{{ client.name }}</option>
-                </select>
-              
-                <label for="date">Date:</label>
-                <input type="date" id="date" [(ngModel)]="meetingDate" name="date" required>
-              
-                <label for="time">Time:</label>
-                <input type="time" id="time" [(ngModel)]="meetingTime" name="time" required>
-              
-                <label for="location">Location:</label>
-                <input type="text" id="location" [(ngModel)]="meetingLocation" name="location" required>
-              
-                <input type="submit" value="Schedule Meeting">
-                <input type="reset" value="Reset">
-            </form>
-            
-            <table id="meetingTable">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Client</th>
-                        <th>Location</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let meeting of meetings">
-                        <td>{{ meeting.meetingDate }}</td>
-                        <td>{{ meeting.meetingTime }}</td>
-                        <td>{{ meeting.selectedClient?.name }}</td>
-                        <td>{{ meeting.meetingLocation }}</td>
-                        <td>
-                            <button class="deleteButton" (click)="onDelete(meeting)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
-        <footer>
-            <p>&copy; 2023 Anna's Architectural Firm</p>
-        </footer>
-        
-    </body>
+  <body>
+    <main>
+      <form (ngSubmit)="onSubmit()" id="meetingForm">
+        <label for="client">Client:</label>
+        <select id="client" [(ngModel)]="selectedClient" name="client" required>
+          <option *ngFor="let client of sharedService.getClients() | async" [ngValue]="client">{{ client.name }}</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" [(ngModel)]="meetingDate" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" [(ngModel)]="meetingTime" name="time" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" [(ngModel)]="meetingLocation" name="location" required>
+
+        <input type="submit" value="Schedule Meeting">
+        <input type="reset" value="Reset">
+      </form>
+
+      <table id="meetingTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Client</th>
+            <th>Phone</th>
+            <th>E-Mail</th>
+            <th>Location</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let meeting of meetings">
+            <td>{{ meeting.meetingDate }}</td>
+            <td>{{ meeting.meetingTime }}</td>
+            <td>{{ meeting.selectedClient?.name }}</td>
+            <td>{{ meeting.selectedClient?.phone }}</td>
+            <td>{{ meeting.selectedClient?.email }}</td>
+            <td>{{ meeting.meetingLocation }}</td>
+            <td>
+              <button class="deleteButton" (click)="onDelete(meeting)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>&copy; 2023 Anna's Architectural Firm</p>
+    </footer>
+  </body>
 </html>
+
+
+
+
+
+
+
 

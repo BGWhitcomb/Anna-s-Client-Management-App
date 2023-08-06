@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vh; /* Make the main content fill the full viewport height */
+    height: 40vh;
   }
   
   .homeWelcome {
@@ -17,21 +17,12 @@ body {
     color: black;
     padding: 40px;
     text-align: center;
-  }
-  
-  .homeDescription {
-    max-width: 600px;
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .homeDescription p {
-    line-height: 1.6;
+    width: 800px;
   }
   
   footer {
     background-color: #f5f5f5;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
   }
   

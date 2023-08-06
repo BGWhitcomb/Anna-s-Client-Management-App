@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Client } from '../client-meetings/client.model';
-import { ClientService } from '../client-meetings/client.service';
+import { Client } from './client.model';
+import { SharedService } from '../client-meetings/shared.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -13,21 +13,29 @@ export class ClientCreationComponent {
   clientEmail: string = '';
   clientPhone: string = '';
 
-  constructor(private clientService: ClientService, private snackBar: MatSnackBar) {
+  constructor(private sharedService: SharedService, private snackBar: MatSnackBar) {
     console.log('constructor works!')
   }
 
   onSubmit() {
+
+    if (!this.clientName || !this.clientEmail || !this.clientPhone) {
+      this.snackBar.open('Please fill out all required fields.', 'Close', {
+        duration: 3000,
+        panelClass: 'error-notification'
+      });
+      return;
+    }
     const newClient: Client = {
-      id: this.generateNewClientID(), // Generate the ID here
+      id: this.generateNewClientID(),
       name: this.clientName,
       email: this.clientEmail,
       phone: this.clientPhone
     };
 
-    this.clientService.addNewClient(newClient);
+    this.sharedService.addNewClient(newClient);
 
-      this.snackBar.open('Client created successfully!', 'Close', {
+    this.snackBar.open('Client created successfully!', 'Close', {
       duration: 3000, // Display duration in milliseconds
       panelClass: 'green-snackbar'
     });
@@ -42,7 +50,13 @@ export class ClientCreationComponent {
     this.clientPhone = '';
   }
 
+  private currentClientID: number = 0;
+
+  // Function to generate a new client ID in ascending numerical order
   private generateNewClientID(): number {
-    return Math.floor(Math.random() * 1000) + 1;
+    this.currentClientID++;
+    return this.currentClientID;
   }
 }
+
+
